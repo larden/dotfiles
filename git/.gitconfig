@@ -1,0 +1,11 @@
+[user]
+	email = jakub.lewalski@gmail.com
+	name = Jakub Lewalski
+[format]
+	signoff = true
+[sendemail]
+	smtpserver = smtp.gmail.com
+	smtpserverport = 587
+	smtpencryption = tls
+	smtpuser = jakub.lewalski@gmail.com
+
