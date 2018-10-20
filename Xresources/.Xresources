@@ -5,15 +5,17 @@ xcursor.theme: Vanilla-DMZ
 URxvt*termName: rxvt-256color
 
 URxvt.scrollBar: off
-URxvt.font: xft:Terminess Powerline:medium:pixelsize=8:antialias=true:hinting=true
+URxvt.font: xft:Iosevka, Thin:medium:pixelsize=8:antialias=true:hinting=true
 URxvt.internalBorder: 0
+! change distance beetwen characters
+! URxvt.letterSpace: -1
 URxvt*selectToClipboard: true
 URxvt*saveLines: 32767
 
 ! Transparency
 URxvt.transparent: false
 
-URxvt.perl-ext-common: default,matcher,font-size
+URxvt.perl-ext-common: default,matcher,font-size,tabbed
 URxvt.urlLauncher: /usr/bin/firefox
 URxvt.matcher.button: 1
 URxvt.tabbed.tabbar-fg: 8
