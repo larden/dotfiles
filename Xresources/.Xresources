@@ -5,10 +5,10 @@ xcursor.theme: Vanilla-DMZ
 URxvt*termName: rxvt-256color
 
 URxvt.scrollBar: off
-URxvt.font: xft:Iosevka, Thin:medium:pixelsize=8:antialias=true:hinting=true
+URxvt.font: xft:Iosevka:pixelsize=15:antialias=true:hinting=true
 URxvt.internalBorder: 0
 ! change distance beetwen characters
-! URxvt.letterSpace: -1
+!URxvt.letterSpace: 1
 URxvt*selectToClipboard: true
 URxvt*saveLines: 32767
 
