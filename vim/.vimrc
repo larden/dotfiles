@@ -10,6 +10,12 @@ Plug 'vim-scripts/cscope.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'Valloric/YouCompleteMe'
+Plug 'rdnetto/YCM-Generator'
+if has('python3') && has('timers')
+  Plug 'AlphaMycelium/pathfinder.vim'
+else
+  echoerr 'pathfinder.vim is not supported on this Vim installation'
+endif
 call plug#end()
 
 set nocompatible
@@ -36,6 +42,12 @@ syntax on
 " highlight matching brackets
 set showmatch
 
+
+" =============================================================================
+" Leader
+" =============================================================================
+let mapleader=","
+
 " =============================================================================
 " Interface
 " =============================================================================
@@ -49,7 +61,6 @@ set laststatus=2
 
 " leader r to toggle relative line numbers
 nmap <leader>r :set rnu!<CR>
-
 
 " =============================================================================
 " Indentation
@@ -66,7 +77,7 @@ filetype plugin indent on
 " Invisible characters
 " =============================================================================
 
-nmap <leader>l :set list!<CR>
+nmap <leader>li :set list!<CR>
 set listchars=tab:▸\ ,eol:¬
 
 function! Preserve(command)
@@ -108,7 +119,7 @@ nnoremap j gj
 nnoremap k gk
 
 " leader r to toggle relative line numbers
-nmap <leader>r ;set rnu!<CR>
+nmap <leader>r :set rnu!<CR>
 
 set pastetoggle=<F11>
 
@@ -173,8 +184,8 @@ let g:ycm_seed_identifiers_with_syntax = 1
 let g:ycm_collect_identifiers_from_comments_and_strings = 1
 let g:ycm_always_populate_location_list = 1
 
-" Set path for python2
-let g:ycm_server_python_interpreter = "/usr/bin/python2"
+" Set path for python3
+let g:ycm_server_python_interpreter = "/usr/bin/python3"
 
 " YCM - don't ask to load config
 let g:ycm_confirm_extra_conf = 0
