@@ -1,1 +1,3 @@
 prompt_color
+
+export PATH="/home/kuba/Programs/flutter/bin:/home/kuba/.cargo/bin:/home/kuba/.gem/ruby/2.6.0/bin:$PATH"
