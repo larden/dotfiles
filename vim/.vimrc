@@ -4,17 +4,17 @@
 " Vim-plug setup
 " =============================================================================
 call plug#begin()
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-Plug 'christoomey/vim-tmux-navigator'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' } " show better tree
+Plug 'christoomey/vim-tmux-navigator' " improve navigation in vim and tmux
 Plug 'vim-scripts/cscope.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'Valloric/YouCompleteMe'
 Plug 'rdnetto/YCM-Generator'
-if has('python3') && has('timers')
-  Plug 'AlphaMycelium/pathfinder.vim'
+if has('nvim') || has('patch-8.0.902') "show differences with style
+  Plug 'mhinz/vim-signify'
 else
-  echoerr 'pathfinder.vim is not supported on this Vim installation'
+  Plug 'mhinz/vim-signify', { 'branch': 'legacy' }
 endif
 call plug#end()
 
@@ -197,3 +197,6 @@ let g:ycm_autoclose_preview_window_after_insertion = 1
 " Airline configuration
 let g:airline_theme='base16_classic'
 let g:airline_powerline_fonts = 1
+
+" Signify
+set updatetime=100
