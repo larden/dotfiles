@@ -9,3 +9,5 @@
 	smtpencryption = tls
 	smtpuser = jakub.lewalski@gmail.com
 
+[init]
+	defaultBranch = master
