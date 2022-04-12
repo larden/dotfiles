@@ -11,6 +11,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'Valloric/YouCompleteMe'
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
+Plug 'junegunn/fzf.vim'
 if has('nvim') || has('patch-8.0.902') "show differences with style
   Plug 'mhinz/vim-signify'
 else
