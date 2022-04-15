@@ -171,6 +171,15 @@ nnoremap  <leader>ff :call cscope#find('f', expand('<cword>'))<CR>
 " i: Find files #including this file
 nnoremap  <leader>fi :call cscope#find('i', expand('<cword>'))<CR>
 
+" open in vertical split
+nnoremap <leader>vs :vert scs find s <C-R>=expand("<cword>")<CR><CR>:cw<CR><CR>
+nnoremap <leader>vg :vert scs find g <C-R>=expand("<cword>")<CR><CR>
+nnoremap <leader>vd :vert scs find d <C-R>=expand("<cword>")<CR><CR>
+nnoremap <leader>vc :vert scs find c <C-R>=expand("<cword>")<CR><CR>
+nnoremap <leader>vt :vert scs find t <C-R>=expand("<cword>")<CR><CR>
+nnoremap <leader>ve :vert scs find e <C-R>=expand("<cword>")<CR><CR>
+nnoremap <leader>vf :vert scs find f <C-R>=expand("<cword>")<CR><CR>
+nnoremap <leader>vi :vert scs find i <C-R>=expand("<cword>")<CR><CR>
 
 " =============================================================================
 " Plugins configuration
