@@ -7,6 +7,8 @@ call plug#begin()
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' } " show better tree
 Plug 'christoomey/vim-tmux-navigator' " improve navigation in vim and tmux
 Plug 'vim-scripts/cscope.vim'
+" TODO
+" Plug 'ronakg/quickr-cscope.vim'  << better version of vim-scripts/cscope.vim
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'Valloric/YouCompleteMe'
