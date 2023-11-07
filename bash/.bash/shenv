@@ -1,3 +1,4 @@
 prompt_color
 
-export PATH="/home/kuba/Programs/flutter/bin:/home/kuba/.cargo/bin:/home/kuba/.gem/ruby/2.6.0/bin:$PATH"
+export BUN_INSTALL="$HOME/.bun"
+export PATH="/home/kuba/bin:/home/kuba/Programs/flutter/bin:/home/kuba/.cargo/bin:/home/kuba/.gem/ruby/2.6.0/bin:/home/kuba/.local/bin:$BUN_INSTALL/bin:$PATH"
