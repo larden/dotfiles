@@ -11,8 +11,12 @@ Plug 'vim-scripts/cscope.vim'
 " Plug 'ronakg/quickr-cscope.vim'  << better version of vim-scripts/cscope.vim
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+if !has('nvim')
 Plug 'Valloric/YouCompleteMe'
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
+else
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+endif
 Plug 'junegunn/fzf.vim'
 if has('nvim') || has('patch-8.0.902') "show differences with style
   Plug 'mhinz/vim-signify'
