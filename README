@@ -1,2 +1,50 @@
 Dotfiles repo managed with GNU Stow as described here:
 http://brandon.invergo.net/news/2012-05-26-using-gnu-stow-to-manage-your-dotfiles.html
+
+## Installation
+
+### Base16-shell
+[https://github.com/chriskempson/base16-shell](https://github.com/chriskempson/base16-shell)
+
+```bash
+git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
+```
+
+Setup Base16-shell in ~/.bashrc
+```bash
+# Base16 Shell
+BASE16_SHELL="$HOME/.config/base16-shell/"
+[ -n "$PS1" ] && \
+    [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
+        source "$BASE16_SHELL/profile_helper.sh"
+
+base16_default-dark
+```
+
+### Tmux TPM
+[https://github.com/chriskempson/base16](https://github.com/chriskempson/base16]
+```bash
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+```
+
+### Vim Plug
+for vim:
+```bash
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+```
+
+for nvim:
+```bash
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+```
+
+### Neovim
+[https://code.launchpad.net/%7Eneovim-ppa/+archive/ubuntu/unstable](https://code.launchpad.net/~neovim-ppa/+archive/ubuntu/unstable)
+Add the PPA for Neovim into your sources.list, update register and install neovim:
+```bash
+sudo add-apt-repository ppa:neovim-ppa/unstable
+sudo apt update
+sudo apt install neovim
+```
