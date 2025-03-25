@@ -4,25 +4,26 @@
 " Vim-plug setup
 " =============================================================================
 call plug#begin()
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' } " show better tree
+"Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' } " show better tree
 Plug 'christoomey/vim-tmux-navigator' " improve navigation in vim and tmux
 Plug 'vim-scripts/cscope.vim'
 " TODO
 " Plug 'ronakg/quickr-cscope.vim'  << better version of vim-scripts/cscope.vim
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-if !has('nvim')
-Plug 'Valloric/YouCompleteMe'
-Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
-else
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-endif
+"if !has('nvim')
+"Plug 'Valloric/YouCompleteMe'
+"Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
+"else
+"Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"endif
 Plug 'junegunn/fzf.vim'
 if has('nvim') || has('patch-8.0.902') "show differences with style
   Plug 'mhinz/vim-signify'
 else
   Plug 'mhinz/vim-signify', { 'branch': 'legacy' }
 endif
+Plug 'ggml-org/llama.vim'
 call plug#end()
 
 set nocompatible
@@ -44,6 +45,11 @@ set secure
 
 set t_Co=256
 set background=dark
+if exists('$BASE16_THEME')
+			\ && (!exists('g:colors_name') || g:colors_name != 'base16-$BASE16_THEME')
+	let base16colorspace=256  " Access colors present in 256 colorspace
+	colorscheme base16-$BASE16_THEME
+endif
 
 syntax on
 " highlight matching brackets
@@ -192,24 +198,28 @@ nnoremap <leader>vi :vert scs find i <C-R>=expand("<cword>")<CR><CR>
 " =============================================================================
 
 "" YouCompleteMe
-let g:ycm_complete_in_comments = 1
-let g:ycm_seed_identifiers_with_syntax = 1
-let g:ycm_collect_identifiers_from_comments_and_strings = 1
-let g:ycm_always_populate_location_list = 1
+"let g:ycm_complete_in_comments = 1
+"let g:ycm_seed_identifiers_with_syntax = 1
+"let g:ycm_collect_identifiers_from_comments_and_strings = 1
+"let g:ycm_always_populate_location_list = 1
 
 " Set path for python3
-let g:ycm_server_python_interpreter = "/usr/bin/python3"
+"let g:ycm_server_python_interpreter = "/usr/bin/python3"
 
 " YCM - don't ask to load config
-let g:ycm_confirm_extra_conf = 0
+"let g:ycm_confirm_extra_conf = 0
 
 " YCM - autoclouse scratch window
-let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_autoclose_preview_window_after_insertion = 1
+"let g:ycm_autoclose_preview_window_after_completion = 1
+"let g:ycm_autoclose_preview_window_after_insertion = 1
 
 " Airline configuration
-let g:airline_theme='base16_classic'
-let g:airline_powerline_fonts = 1
+"let g:airline_theme='base16_classic'
+"let g:airline_powerline_fonts = 1
 
 " Signify
 set updatetime=100
+
+"" llama.vim
+" put before llama.vim loads
+"let g:llama_config = { 'show_info': 0 }
